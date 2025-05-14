@@ -1,9 +1,7 @@
 pull_request_rules:
-  - name: Automatically merge pull requests
+  - name: automatic merge
     conditions:
-      - "base=main"                 # The branch to merge into
-      - "label=ready-to-merge"      # A specific label must be added
+      - "label=ready-to-merge"    # Check if the PR has a specific label
     actions:
       merge:
-        method: merge               # Merge method: merge, squash, or rebase
-        commit_message_template: "Automatically merged via Mergify"
+        method: squash           # Merge method: merge, squash, or rebase
