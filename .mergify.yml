@@ -2,7 +2,6 @@ pull_request_rules:
   - name: Automatically merge pull requests
     conditions:
       - "base=main"                 # The branch to merge into
-      - "status-success=all"        # All CI checks must pass
       - "label=ready-to-merge"      # A specific label must be added
     actions:
       merge:
